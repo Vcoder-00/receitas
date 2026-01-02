@@ -30,8 +30,9 @@ collection:
         send: true
         store: true
       rebuildPath: true
+
   - url: "{{baseUrl}}/categories"
-    name: Create Category
+    name: Create New Category
     meta:
       id: req_27fe2d550bfe4d8ea6ce68336fa12370
       created: 1765412821874
@@ -42,7 +43,7 @@ collection:
     method: POST
     body:
       mimeType: application/json
-      text: '{ "name": "Massas" }'
+      text: '{ "name": "DIGITE_AQUI_O_NOME_DA_CATEGORIA]_NOVA" }'
     headers:
       - name: Content-Type
         value: application/json
@@ -58,6 +59,145 @@ collection:
         send: true
         store: true
       rebuildPath: true
+
+  # Parte atualizada por Mailson Sousa
+
+  - url: "{{baseUrl}}/categories"
+    name: Create Category [Carnes]
+    meta:
+      id: req_a1c3f2b7c5e44dbab12c1110b901e210
+      created: 1766000001000
+      modified: 1766000002000
+      isPrivate: false
+      description: ""
+      sortKey: -1766000001000
+    method: POST
+    body:
+      mimeType: application/json
+      text: '{ "name": "Carnes" }'
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+
+  - url: "{{baseUrl}}/categories"
+    name: Create Category [Massas]
+    meta:
+      id: req_d2f4a7d93bd9413f82b92d8822109bf1
+      created: 1766000003000
+      modified: 1766000004000
+      isPrivate: false
+      description: ""
+      sortKey: -1766000003000
+    method: POST
+    body:
+      mimeType: application/json
+      text: '{ "name": "Massas" }'
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+  - url: "{{baseUrl}}/categories"
+    name: Create Category [Saladas]
+    meta:
+      id: req_f817cb3ff821400588d6cc912fbb983a
+      created: 1766000005000
+      modified: 1766000006000
+      isPrivate: false
+      description: ""
+      sortKey: -1766000005000
+    method: POST
+    body:
+      mimeType: application/json
+      text: '{ "name": "Saladas" }'
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+  - url: "{{baseUrl}}/categories"
+    name: Create Category [Sopas]
+    meta:
+      id: req_91d2b6f77a9e45f2abc1e0cdd11f44fe
+      created: 1766000007000
+      modified: 1766000008000
+      isPrivate: false
+      description: ""
+      sortKey: -1766000007000
+    method: POST
+    body:
+      mimeType: application/json
+      text: '{ "name": "Sopas" }'
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+  - url: "{{baseUrl}}/categories"
+    name: Create Category [Sobremesas]
+    meta:
+      id: req_c7ac1148491a43a184d34d4d3ab91c5a
+      created: 1766000009000
+      modified: 1766000010000
+      isPrivate: false
+      description: ""
+      sortKey: -1766000009000
+    method: POST
+    body:
+      mimeType: application/json
+      text: '{ "name": "Sobremesas" }'
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
   - url: "{{baseUrl}}/categories/1de3de75-1f03-419e-ad86-d803d296ea17"
     name: Show Category
     meta:
