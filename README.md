@@ -139,6 +139,29 @@ Códigos de erro: as validações retornam `400` com `{ error: "mensagem" }` (mi
   - Crie um ambiente com variável `base_url` e use `{{ base_url }}` nas requisições.
   - Salve exemplos de corpo usando os arquivos em `requests/`.
 
+## Atualização do `Insomnia_recipes_requests.yaml`
+
+## Novas funcionalidades
+
+### Categorias Pré-definidas
+
+O sistema passou a incluir um conjunto de categorias prontas, permitindo ao usuário criar rapidamente estruturas comuns sem precisar definir tudo manualmente. As categorias disponíveis são:
+
+- **Carnes**
+- **Massas**
+- **Saladas**
+- **Sopas**
+- **Sobremesas**
+
+Essas opções facilitam o início do fluxo de cadastro, oferecendo uma base sólida para a organização das receitas.
+
+### Create New Category
+
+Como agora existem categorias pré-definidas, o endpoint antes chamado **Create Category** foi renomeado para **Create New Category**.  
+Esse método permanece responsável por criar categorias personalizadas, permitindo ao usuário expandir a taxonomia do sistema além das cinco opções iniciais.
+
+A requisição aceita os mesmos parâmetros de antes, mantendo sua função original — criar qualquer categoria adicional que o usuário desejar.
+
 ## Exemplos rápidos (Windows PowerShell)
 - Criar categoria usando arquivo:
   ```powershell
