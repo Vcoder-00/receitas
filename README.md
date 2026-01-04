@@ -231,7 +231,7 @@ receitas/
 
 ## Novas funcionalidades adicionadas ao sistema
 
-### Escalonamento de Porções
+## Escalonamento de Porções
 
 Recalcula os ingredientes de uma receita para um novo número de porções, sem modificar ou persistir a receita original.
 
@@ -244,6 +244,7 @@ Recalcula os ingredientes de uma receita para um novo número de porções, sem 
 
 ### Cálculo
 - factor = newServings / recipe.servings
+
 ### Endpoint
 - POST /recipes/:id/scale
 
@@ -272,3 +273,47 @@ Recalcula os ingredientes de uma receita para um novo número de porções, sem 
 - Um novo objeto de receita é retornado.
 - Não há persistência de dados.
 - A receita original não é modificada.
+
+## Lista de Compras Consolidada
+
+Gera uma lista única de ingredientes combinando múltiplas receitas, somando quantidades iguais sem modificar nenhum dado original.
+
+### Regras que foram implementadas
+- O array recipeIds deve existir e não pode ser vazio.
+- Cada ID deve corresponder a uma receita existente.
+- Ingredientes iguais (mesmo ingredientId e mesma unit) são somados.
+- A operação não altera o estado do sistema.
+- Nenhuma receita é modificada ou persistida.
+- O retorno é apenas uma lista consolidada em memória.
+
+### Lógica de Consolidação
+- Para cada receita encontrada:
+- Percorre seus ingredientes.
+- Procura na lista final um item com o mesmo ingredientId e unit.
+- Se existir → soma a quantidade.
+- Se não existir → adiciona um novo item.
+
+### Endpoint
+- POST /recipes/shopping-list
+
+### Body 
+```json
+{
+  "recipeIds": ["123", "456", "789"]
+}
+```
+### Exemplo
+```json
+[
+  { "ingredientId": "farinha", "unit": "g", "quantity": 1200 },
+  { "ingredientId": "cenoura", "unit": "un", "quantity": 6 },
+  { "ingredientId": "açúcar", "unit": "g", "quantity": 800 }
+]
+```
+### Funcionamento
+- Cada receita é obtida pelo ID informado.
+- Todos os ingredientes são percorridos.
+- Ingredientes compatíveis são somados na lista final.
+- Um array consolidado é retornado.
+- Não há persistência de dados.
+- Nenhuma receita original é modificada.
