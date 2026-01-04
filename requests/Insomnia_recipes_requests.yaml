@@ -198,6 +198,89 @@ collection:
         store: true
       rebuildPath: true
 
+# Exemplo para escalonar a quantidade de ingredientes de uma receita
+  - url: "{{baseUrl}}/recipes/ID_DA_RECEITA_AQUI/scale"
+    name: Scale Recipe
+    meta:
+      id: req_9fb3c7d4a6b449f3a8d8ec5a1b7de920
+      created: 1766001000000
+      modified: 1766001001000
+      isPrivate: false
+      description: "Escale a quantidade de ingredientes de uma receita"
+      sortKey: -1766001000000
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "servings": 12
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+# Exemplo para publicar uma receita que está em rascunho (DRAFT)
+  - url: "{{baseUrl}}/recipes/ID_DA_RECEITA_AQUI/publish"
+    name: Publish Recipe
+    meta:
+      id: req_f2c9ab88a37c4e3e9bd1e4e8c118b0a2
+      created: 1766002000000
+      modified: 1766002001000
+      isPrivate: false
+      description: "Publica uma receita"
+      sortKey: -1766002000000
+    method: POST
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+# Exemplo para arquivar uma receita que está publicada (PUBLISSHED)
+  - url: "{{baseUrl}}/recipes/ID_DA_RECEITA_AQUI/archive"
+    name: Archive Recipe
+    meta:
+      id: req_d8f41c7e2b8943b88fd4c9e1a3bb92af
+      created: 1766001100000
+      modified: 1766001101000
+      isPrivate: false
+      description: "Arquiva uma receita"
+      sortKey: -1766001100000
+    method: POST
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+# FINAL 
   - url: "{{baseUrl}}/categories/1de3de75-1f03-419e-ad86-d803d296ea17"
     name: Show Category
     meta:
