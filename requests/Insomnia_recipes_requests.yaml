@@ -7,6 +7,53 @@ meta:
   modified: 1765982852851
   description: ""
 collection:
+
+# Delete categoria
+  - url: "{{baseUrl}}/categories/ID_DA_CATEGORIA_AQUI"
+    name: Delete Category
+    meta:
+      id: req_delete_category
+      created: 1767000000000
+      modified: 1767000000000
+      isPrivate: false
+      description: "Deleta uma categoria pelo ID"
+      sortKey: -1767000000000
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/12.2.0
+    settings:
+      renderRequestBody: false
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+# Delete ingredientes
+  - url: "{{baseUrl}}/categories/ID_Do_INGREDIENTE_AQUI"
+    name: Delete Ingredients
+    meta:
+      id: req_delete_ingredients
+      created: 1767000000000
+      modified: 1767000000000
+      isPrivate: false
+      description: "Deleta um ingrendiente pelo ID"
+      sortKey: -1767000000000
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/12.2.0
+    settings:
+      renderRequestBody: false
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
   - url: "{{baseUrl}}/categories"
     name: List Categories
     meta:
