@@ -2,6 +2,8 @@ import crypto from "node:crypto"
 import { store } from "./store.js"
 import { Ingredient } from "./models.js"
 import { IIngredientService } from "./interfaces/IIngredientService.js"
+import { normalizeText } from "./utils/normalizetext.js"
+
 
 export class IngredientService implements IIngredientService {
   async list(): Promise<Ingredient[]> {
@@ -14,25 +16,43 @@ export class IngredientService implements IIngredientService {
     return found
   }
 
-  async findByName(name: string): Promise<Ingredient | undefined> {
-    return store.ingredients.find((i) => i.name === name)
+  /**
+   * 
+   * @param  
+   * @returns 
+   */
+async findByName(name: string): Promise<Ingredient | undefined> {
+  const normalized = normalizeText(name)
+
+  return store.ingredients.find(i =>
+    normalizeText(i.name) === normalized
+  )
+}
+
+
+async create(data: { name: string }): Promise<Ingredient> {
+  const name = String(data.name ?? "").trim()
+
+  if (!name) {
+    throw new Error("Ingredient name is required")
   }
 
-  async create(data: { name: string }): Promise<Ingredient> {
-    const name = data.name.trim()
-    if (!name) throw new Error("Name is required")
-
-    const exists = await this.findByName(name)
-    if (exists) throw new Error("Ingredient name must be unique")
-
-    const ingredient: Ingredient = {
-      id: crypto.randomUUID(),
-      name,
-      createdAt: new Date(),
-    }
-    store.ingredients.push(ingredient)
-    return ingredient
+  // verifica duplicidade (sem acentos, minúsculo, trim)
+  const existing = await this.findByName(name)
+  if (existing) {
+    throw new Error("Ingredient name already exists")
   }
+
+  const ingredient: Ingredient = {
+    id: crypto.randomUUID(),
+    name,
+    createdAt: new Date()
+  }
+
+  store.ingredients.push(ingredient)
+
+  return ingredient
+}
 
   async update(id: string, data: { name?: string }): Promise<Ingredient> {
     const idx = store.ingredients.findIndex((i) => i.id === id)
