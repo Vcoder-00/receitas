@@ -141,7 +141,7 @@ Códigos de erro: as validações retornam `400` com `{ error: "mensagem" }` (mi
   - Crie um ambiente com variável `base_url` e use `{{ base_url }}` nas requisições.
   - Salve exemplos de corpo usando os arquivos em `requests/`.
 
-## Lista de receitas 
+## Lista de compras 
 A lista de compras **não é um recurso independente** no sistema.
 
 Ela é tratada como uma **ação do contexto de Receitas**, responsável por gerar uma visão consolidada dos ingredientes a partir de múltiplas receitas.
