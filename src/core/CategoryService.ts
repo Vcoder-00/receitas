@@ -2,7 +2,7 @@ import crypto from "node:crypto"
 import { store } from "./store.js"
 import { Category } from "./models.js"
 import { ICategoryService } from "./interfaces/ICategoryService.js"
-import { normalizeText } from "./utils/normalizetext.js"
+import { normalizeText } from "./utils/normalizeText.js"
 
 export class CategoryService implements ICategoryService {
   async list(): Promise<Category[]> {

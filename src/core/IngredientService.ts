@@ -2,7 +2,7 @@ import crypto from "node:crypto"
 import { store } from "./store.js"
 import { Ingredient } from "./models.js"
 import { IIngredientService } from "./interfaces/IIngredientService.js"
-import { normalizeText } from "./utils/normalizetext.js"
+import { normalizeText } from "./utils/normalizeText.js"
 
 
 export class IngredientService implements IIngredientService {
@@ -36,9 +36,11 @@ async create(data: { name: string }): Promise<Ingredient> {
   if (!name) {
     throw new Error("Ingredient name is required")
   }
+  
+  const nameNormalized = normalizeText(name);
 
   // verifica duplicidade (sem acentos, minúsculo, trim)
-  const existing = await this.findByName(name)
+  const existing = await this.findByName(nameNormalized)
   if (existing) {
     throw new Error("Ingredient name already exists")
   }
