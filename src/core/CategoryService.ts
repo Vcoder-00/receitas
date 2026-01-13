@@ -23,8 +23,7 @@ export class CategoryService implements ICategoryService {
  *
  * A função `normalizeText` remove acentos, converte para minúsculas e aplica
  * `.trim()`, garantindo que variações como:
- * "Bolo", " bolo ", "BÔLO" ou "bôlo"
- * sejam tratadas como equivalentes.
+ * "Sobremesas", " sobremesas ", "SÔBREMESAS" ou "sôbremesas" sejam tratadas como equivalentes.
  *
  * Isso impede duplicidades lógicas e garante integridade e consistência
  * dos dados no sistema.
