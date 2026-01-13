@@ -6,6 +6,12 @@ export interface IRecipeService {
   create(input: CreateRecipeInput): Promise<Recipe>
   update(id: string, data: Partial<CreateRecipeInput>): Promise<Recipe>
   delete(id: string): Promise<void>
+  /**
+   * MODIFICAÇÃO: Métodos para alterar o status da receita
+   * @param id - Identificador da receita a ser modificada. 
+   */
+  publish(id: string): Promise<Recipe>
+  archive(id: string): Promise<Recipe>
     /**
    * CÓDIGO NOVO
    * Escalonamento inteligente de porções (sem persistência).

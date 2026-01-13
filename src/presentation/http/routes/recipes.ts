@@ -89,6 +89,30 @@ export function recipesRoutes(service: IRecipeService) {
     }
   })
 
+  /**
+  * Endpoint para publicar receita (draft → published)
+  */
+  router.post("/:id/publish", async (req, res, next) => {
+    try {
+      const recipe = await service.publish(req.params.id)
+      res.json(recipe)
+    } catch (error) {
+      next(error)
+    }
+  })
+
+  /**
+  * Endpoint para arquivar receita (published → archived)
+  */
+  router.post("/:id/archive", async (req, res, next) => {
+    try {
+      const recipe = await service.archive(req.params.id)
+      res.json(recipe)
+    } catch (error) {
+      next(error)
+    }
+  })
+
   return router
 }
 

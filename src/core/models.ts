@@ -1,3 +1,5 @@
+import { RecipeStatus } from "./RecipeStatus.js"
+
 export type Category = {
   id: string
   name: string
@@ -19,6 +21,11 @@ export type Recipe = {
   servings: number
   categoryId: string
   createdAt: Date
+  /**
+   * MODIFICAÇÃO: Adição do status da receita
+   * @param status - Estado atual da receita no sistema.
+   */
+  status: RecipeStatus
 }
 
 export type CreateRecipeInput = {
