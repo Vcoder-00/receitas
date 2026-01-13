@@ -162,10 +162,21 @@ export class RecipeService implements IRecipeService {
     return updated
   }
 
-  async delete(id: string): Promise<void> {
+   /**
+   * CÓDIGO MODIFICADO
+   * Exclusão permitida apenas para receitas em draft ou archived.
+   */
+    async delete(id: string): Promise<void> {
     const idx = store.recipes.findIndex(r => r.id === id)
-    if (idx >= 0) {
-      store.recipes.splice(idx, 1)
+    if (idx < 0) throw new Error("Recipe not found")
+
+    const current = store.recipes[idx]
+
+    if (current.status === "published") {
+      throw new Error("Only draft or archived recipes can be deleted")
     }
+
+    store.recipes.splice(idx, 1)
   }
+
 }
