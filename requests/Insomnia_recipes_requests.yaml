@@ -54,6 +54,30 @@ collection:
         store: true
       rebuildPath: true
 
+# Exemplo para consolidar uma lista
+  - url: "{{baseUrl}}/action/shopping-list"
+    name: Consolidate Recipes
+    meta:
+      id: req_consolidate_recipes
+      created: 1767000000000
+      modified: 1767000000000
+      isPrivate: false
+      description: "Consolida uma lista de receitas"
+      sortKey: -1767000000000
+    method: POST
+    headers:
+      - name: User-Agent
+        value: insomnia/12.2.0
+    settings:
+      renderRequestBody: false
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+
   - url: "{{baseUrl}}/categories"
     name: List Categories
     meta:
