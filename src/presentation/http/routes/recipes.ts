@@ -113,6 +113,18 @@ export function recipesRoutes(service: IRecipeService) {
     }
   })
 
+  /**
+   * Endpoint para geração de lista de compras consolidada
+   */
+  router.post("/action/shopping-list", async (req, res, next) => {
+    try {
+      const recipeIds = req.body.recipeIds
+      const result = await service.generateShoppingList(recipeIds)
+      res.json(result)
+    } catch (error) {
+      next(error)
+    }
+  })
+
   return router
 }
-

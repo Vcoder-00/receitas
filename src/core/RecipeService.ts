@@ -275,4 +275,40 @@ export class RecipeService implements IRecipeService {
       servings: newServings,
     }
   }
+
+  /**
+ * CÓDIGO NOVO
+ * Gera lista de compras consolidada
+ */
+async generateShoppingList(recipeIds: string[]) {
+  if (!Array.isArray(recipeIds) || recipeIds.length === 0) {
+    throw new Error("Recipe IDs are required")
+  }
+
+  const list: { ingredientId: string; unit: string; quantity: number }[] = []
+
+  for (const id of recipeIds) {
+    const recipe = await this.get(id)
+
+    for (const ing of recipe.ingredients) {
+      const existing = list.find(
+        item =>
+          item.ingredientId === ing.ingredientId &&
+          item.unit === ing.unit
+      )
+
+      if (existing) {
+        existing.quantity += ing.quantity
+      } else {
+        list.push({
+          ingredientId: ing.ingredientId,
+          unit: ing.unit,
+          quantity: ing.quantity,
+        })
+      }
+    }
+  }
+
+  return list
+}
 }
