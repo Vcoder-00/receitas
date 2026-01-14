@@ -55,7 +55,7 @@ collection:
       rebuildPath: true
 
 # Exemplo para consolidar uma lista
-  - url: "{{baseUrl}}/recipes/action/shopping-list"
+  - url: "{{baseUrl}}/action/shopping-list"
     name: Consolidate Recipes
     meta:
       id: req_consolidate_recipes
@@ -65,9 +65,6 @@ collection:
       description: "Consolida uma lista de receitas"
       sortKey: -1767000000000
     method: POST
-    body:
-      mimeType: application/json
-      text: '{ "recipesIds": ["ID_DA_RECEITA_1_AQUI", "ID_DA_RECEITA_2_AQUI"] }'
     headers:
       - name: User-Agent
         value: insomnia/12.2.0
@@ -134,7 +131,7 @@ collection:
         store: true
       rebuildPath: true
 
-  # Parte atualizada por Mailson Sousa
+  # Exemplo de categoria pre-definidas
 
   - url: "{{baseUrl}}/categories"
     name: Create Category [Carnes]
@@ -354,7 +351,7 @@ collection:
         store: true
       rebuildPath: true
 
-# Parte feita pelo Cássio
+# Exemplos de receitas pre-definida
   - url: "{{baseUrl}}/recipes"
     name: Create Recipe [ carne assada ]
     meta:
