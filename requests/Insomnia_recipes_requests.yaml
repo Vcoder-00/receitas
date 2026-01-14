@@ -7,6 +7,80 @@ meta:
   modified: 1765982852851
   description: ""
 collection:
+
+# Delete categoria
+  - url: "{{baseUrl}}/categories/ID_DA_CATEGORIA_AQUI"
+    name: Delete Category
+    meta:
+      id: req_delete_category
+      created: 1767000000000
+      modified: 1767000000000
+      isPrivate: false
+      description: "Deleta uma categoria pelo ID"
+      sortKey: -1767000000000
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/12.2.0
+    settings:
+      renderRequestBody: false
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+# Delete ingredientes
+  - url: "{{baseUrl}}/categories/ID_Do_INGREDIENTE_AQUI"
+    name: Delete Ingredients
+    meta:
+      id: req_delete_ingredients
+      created: 1767000000000
+      modified: 1767000000000
+      isPrivate: false
+      description: "Deleta um ingrendiente pelo ID"
+      sortKey: -1767000000000
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/12.2.0
+    settings:
+      renderRequestBody: false
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+# Exemplo para consolidar uma lista
+  - url: "{{baseUrl}}/recipes/action/shopping-list"
+    name: Consolidate Recipes
+    meta:
+      id: req_consolidate_recipes
+      created: 1767000000000
+      modified: 1767000000000
+      isPrivate: false
+      description: "Consolida uma lista de receitas"
+      sortKey: -1767000000000
+    method: POST
+    body:
+      mimeType: application/json
+      text: '{ "recipesIds": ["ID_DA_RECEITA_1_AQUI", "ID_DA_RECEITA_2_AQUI"] }'
+    headers:
+      - name: User-Agent
+        value: insomnia/12.2.0
+    settings:
+      renderRequestBody: false
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+
   - url: "{{baseUrl}}/categories"
     name: List Categories
     meta:
@@ -30,8 +104,9 @@ collection:
         send: true
         store: true
       rebuildPath: true
+
   - url: "{{baseUrl}}/categories"
-    name: Create Category
+    name: Create New Category
     meta:
       id: req_27fe2d550bfe4d8ea6ce68336fa12370
       created: 1765412821874
@@ -42,7 +117,7 @@ collection:
     method: POST
     body:
       mimeType: application/json
-      text: '{ "name": "Massas" }'
+      text: '{ "name": "DIGITE_AQUI_O_NOME_DA_CATEGORIA_NOVA" }'
     headers:
       - name: Content-Type
         value: application/json
@@ -58,6 +133,624 @@ collection:
         send: true
         store: true
       rebuildPath: true
+
+  # Parte atualizada por Mailson Sousa
+
+  - url: "{{baseUrl}}/categories"
+    name: Create Category [Carnes]
+    meta:
+      id: req_a1c3f2b7c5e44dbab12c1110b901e210
+      created: 1766000001000
+      modified: 1766000002000
+      isPrivate: false
+      description: ""
+      sortKey: -1766000001000
+    method: POST
+    body:
+      mimeType: application/json
+      text: '{ "name": "Carnes" }'
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+
+  - url: "{{baseUrl}}/categories"
+    name: Create Category [Massas]
+    meta:
+      id: req_d2f4a7d93bd9413f82b92d8822109bf1
+      created: 1766000003000
+      modified: 1766000004000
+      isPrivate: false
+      description: ""
+      sortKey: -1766000003000
+    method: POST
+    body:
+      mimeType: application/json
+      text: '{ "name": "Massas" }'
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+  - url: "{{baseUrl}}/categories"
+    name: Create Category [Saladas]
+    meta:
+      id: req_f817cb3ff821400588d6cc912fbb983a
+      created: 1766000005000
+      modified: 1766000006000
+      isPrivate: false
+      description: ""
+      sortKey: -1766000005000
+    method: POST
+    body:
+      mimeType: application/json
+      text: '{ "name": "Saladas" }'
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+  - url: "{{baseUrl}}/categories"
+    name: Create Category [Sopas]
+    meta:
+      id: req_91d2b6f77a9e45f2abc1e0cdd11f44fe
+      created: 1766000007000
+      modified: 1766000008000
+      isPrivate: false
+      description: ""
+      sortKey: -1766000007000
+    method: POST
+    body:
+      mimeType: application/json
+      text: '{ "name": "Sopas" }'
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+  - url: "{{baseUrl}}/categories"
+    name: Create Category [Sobremesas]
+    meta:
+      id: req_c7ac1148491a43a184d34d4d3ab91c5a
+      created: 1766000009000
+      modified: 1766000010000
+      isPrivate: false
+      description: ""
+      sortKey: -1766000009000
+    method: POST
+    body:
+      mimeType: application/json
+      text: '{ "name": "Sobremesas" }'
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+# Exemplo para escalonar a quantidade de ingredientes de uma receita
+  - url: "{{baseUrl}}/recipes/ID_DA_RECEITA_AQUI/scale"
+    name: Scale Recipe
+    meta:
+      id: req_9fb3c7d4a6b449f3a8d8ec5a1b7de920
+      created: 1766001000000
+      modified: 1766001001000
+      isPrivate: false
+      description: "Escale a quantidade de ingredientes de uma receita"
+      sortKey: -1766001000000
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "servings": 12
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+# Exemplo para publicar uma receita que está em rascunho (DRAFT)
+  - url: "{{baseUrl}}/recipes/ID_DA_RECEITA_AQUI/publish"
+    name: Publish Recipe
+    meta:
+      id: req_f2c9ab88a37c4e3e9bd1e4e8c118b0a2
+      created: 1766002000000
+      modified: 1766002001000
+      isPrivate: false
+      description: "Publica uma receita"
+      sortKey: -1766002000000
+    method: POST
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+# Exemplo para arquivar uma receita que está publicada (PUBLISSHED)
+  - url: "{{baseUrl}}/recipes/ID_DA_RECEITA_AQUI/archive"
+    name: Archive Recipe
+    meta:
+      id: req_d8f41c7e2b8943b88fd4c9e1a3bb92af
+      created: 1766001100000
+      modified: 1766001101000
+      isPrivate: false
+      description: "Arquiva uma receita"
+      sortKey: -1766001100000
+    method: POST
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: User-Agent
+        value: insomnia/12.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+# Parte feita pelo Cássio
+  - url: "{{baseUrl}}/recipes"
+    name: Create Recipe [ carne assada ]
+    meta:
+      id: req_4c2a1f8d9b2e4a5e9c3d1a7b8f6e1234
+      created: 1765989000000
+      modified: 1765989000000
+      isPrivate: false
+      description: ""
+      sortKey: -1759304309300
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Carne Assada",
+          "description": "Carne bovina macia e bem temperada, assada no forno",
+          "categoryId": "ID_DA_CATEGORIA_CARNES_AQUI",
+          "ingredients": [
+            {
+              "name": "Carne bovina",
+              "quantity": 1,
+              "unit": "kg"
+            },
+            {
+              "name": "Alho",
+              "quantity": 3,
+              "unit": "dentes"
+            },
+            {
+              "name": "Cebola",
+              "quantity": 1,
+              "unit": "unidade"
+            },
+            {
+              "name": "Sal",
+              "quantity": 1,
+              "unit": "colher de sopa"
+            },
+            {
+              "name": "Óleo",
+              "quantity": 2,
+              "unit": "colheres de sopa"
+            }
+          ],
+          "steps": [
+            "Tempere a carne com alho, sal e cebola.",
+            "Aqueça o óleo e sele a carne em uma panela.",
+            "Transfira para uma assadeira e cubra com papel alumínio.",
+            "Asse em forno médio por cerca de 1 hora."
+          ],
+          "servings": 6
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+  - url: "{{baseUrl}}/recipes"
+    name: Create Recipe [ salada verde ]
+    meta:
+      id: req_9b7a1c2d4e5f6a8b9c0d1e2f3a4b5c6d
+      created: 1766010000000
+      modified: 1766010000000
+      isPrivate: false
+      description: ""
+      sortKey: -1759304309200
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Salada Verde",
+          "description": "Salada leve e refrescante para acompanhar refeições",
+          "categoryId": "ID_DA_CATEGORIA_SALADAS_AQUI",
+          "ingredients": [
+            {
+              "name": "Alface",
+              "quantity": 1,
+              "unit": "pé"
+            },
+            {
+              "name": "Tomate",
+              "quantity": 2,
+              "unit": "unidades"
+            },
+            {
+              "name": "Pepino",
+              "quantity": 1,
+              "unit": "unidade"
+            },
+            {
+              "name": "Azeite de oliva",
+              "quantity": 2,
+              "unit": "colheres de sopa"
+            },
+            {
+              "name": "Sal",
+              "quantity": 1,
+              "unit": "pitada"
+            }
+          ],
+          "steps": [
+            "Lave bem todos os legumes.",
+            "Corte a alface, o tomate e o pepino.",
+            "Misture tudo em uma tigela.",
+            "Tempere com azeite e sal antes de servir."
+          ],
+          "servings": 4
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+      
+  - url: "{{baseUrl}}/recipes"
+    name: Create Recipe [ sopa de legumes ]
+    meta:
+      id: req_3f8a9b1c2d4e5f6a7b8c9d0e1f2a3b4
+      created: 1766012000000
+      modified: 1766012000000
+      isPrivate: false
+      description: ""
+      sortKey: -1759304309100
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Sopa de Legumes",
+          "description": "Sopa nutritiva e caseira, ideal para dias frios",
+          "categoryId": "ID_DA_CATEGORIA_SOPAS_AQUI",
+          "ingredients": [
+            {
+              "name": "Batata",
+              "quantity": 2,
+              "unit": "unidades"
+            },
+            {
+              "name": "Cenoura",
+              "quantity": 1,
+              "unit": "unidade"
+            },
+            {
+              "name": "Abobrinha",
+              "quantity": 1,
+              "unit": "unidade"
+            },
+            {
+              "name": "Cebola",
+              "quantity": 1,
+              "unit": "unidade"
+            },
+            {
+              "name": "Alho",
+              "quantity": 2,
+              "unit": "dentes"
+            },
+            {
+              "name": "Sal",
+              "quantity": 1,
+              "unit": "colher de chá"
+            },
+            {
+              "name": "Água",
+              "quantity": 1,
+              "unit": "litro"
+            }
+          ],
+          "steps": [
+            "Pique todos os legumes.",
+            "Refogue a cebola e o alho.",
+            "Adicione os legumes e a água.",
+            "Cozinhe até os legumes ficarem macios."
+          ],
+          "servings": 5
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{baseUrl}}/recipes"
+    name: Create Recipe [ macarrão alho e óleo ]
+    meta:
+      id: req_a1b2c3d4e5f60718293a4b5c6d7e8f90
+      created: 1766014000000
+      modified: 1766014000000
+      isPrivate: false
+      description: ""
+      sortKey: -1759304309000
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Macarrão ao Alho e Óleo",
+          "description": "Massa simples e saborosa para o dia a dia",
+          "categoryId": "ID_DA_CATEGORIA_MASSAS_AQUI",
+          "ingredients": [
+            { "name": "Macarrão", "quantity": 500, "unit": "g" },
+            { "name": "Alho", "quantity": 4, "unit": "dentes" },
+            { "name": "Azeite", "quantity": 4, "unit": "colheres de sopa" },
+            { "name": "Sal", "quantity": 1, "unit": "colher de chá" }
+          ],
+          "steps": [
+            "Cozinhe o macarrão em água com sal.",
+            "Doure o alho no azeite.",
+            "Misture o macarrão ao alho e óleo."
+          ],
+          "servings": 4
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+  - url: "{{baseUrl}}/recipes"
+    name: Create Recipe [ salada de frutas ]
+    meta:
+      id: req_b2c3d4e5f60718293a4b5c6d7e8f901
+      created: 1766015000000
+      modified: 1766015000000
+      isPrivate: false
+      description: ""
+      sortKey: -1759304308900
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Salada de Frutas",
+          "description": "Sobremesa leve e refrescante",
+          "categoryId": "ID_DA_CATEGORIA_SALADAS_AQUI",
+          "ingredients": [
+            { "name": "Banana", "quantity": 2, "unit": "unidades" },
+            { "name": "Maçã", "quantity": 1, "unit": "unidade" },
+            { "name": "Laranja", "quantity": 1, "unit": "unidade" }
+          ],
+          "steps": [
+            "Descasque e pique as frutas.",
+            "Misture tudo em uma tigela.",
+            "Sirva gelado."
+          ],
+          "servings": 3
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+  - url: "{{baseUrl}}/recipes"
+    name: Create Recipe [ sopa de frango ]
+    meta:
+      id: req_c3d4e5f60718293a4b5c6d7e8f901a2
+      created: 1766016000000
+      modified: 1766016000000
+      isPrivate: false
+      description: ""
+      sortKey: -1759304308800
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Sopa de Frango",
+          "description": "Sopa reconfortante e nutritiva",
+          "categoryId": "ID_DA_CATEGORIA_SOPAS_AQUI",
+          "ingredients": [
+            { "name": "Peito de frango", "quantity": 300, "unit": "g" },
+            { "name": "Batata", "quantity": 2, "unit": "unidades" },
+            { "name": "Cenoura", "quantity": 1, "unit": "unidade" },
+            { "name": "Água", "quantity": 1, "unit": "litro" }
+          ],
+          "steps": [
+            "Cozinhe o frango na água.",
+            "Adicione os legumes picados.",
+            "Cozinhe até tudo ficar macio."
+          ],
+          "servings": 4
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+  - url: "{{baseUrl}}/recipes"
+    name: Create Recipe [ frango grelhado ]
+    meta:
+      id: req_d4e5f60718293a4b5c6d7e8f901a2b3
+      created: 1766017000000
+      modified: 1766017000000
+      isPrivate: false
+      description: ""
+      sortKey: -1759304308700
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Frango Grelhado",
+          "description": "Frango simples, saudável e bem temperado",
+          "categoryId": "ID_DA_CATEGORIA_CARNES_AQUI",
+          "ingredients": [
+            { "name": "Peito de frango", "quantity": 500, "unit": "g" },
+            { "name": "Alho", "quantity": 2, "unit": "dentes" },
+            { "name": "Sal", "quantity": 1, "unit": "colher de chá" }
+          ],
+          "steps": [
+            "Tempere o frango.",
+            "Grelhe em fogo médio até dourar.",
+            "Sirva quente."
+          ],
+          "servings": 3
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+
+# FINAL 
   - url: "{{baseUrl}}/categories/1de3de75-1f03-419e-ad86-d803d296ea17"
     name: Show Category
     meta:
