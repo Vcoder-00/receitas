@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/presentation/http/server.js",
-    "dev": "ts-node src/presentation/http/server.ts"
+    "dev": "node --loader ts-node/esm src/presentation/http/server.ts"
   },
   "keywords": [],
   "author": "",

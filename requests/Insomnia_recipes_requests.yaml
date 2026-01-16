@@ -55,7 +55,7 @@ collection:
       rebuildPath: true
 
 # Exemplo para consolidar uma lista
-  - url: "{{baseUrl}}/recipes/action/shopping-list"
+  - url: "{{baseUrl}}/action/shopping-list"
     name: Consolidate Recipes
     meta:
       id: req_consolidate_recipes
@@ -79,6 +79,7 @@ collection:
         send: true
         store: true
       rebuildPath: true
+
 
   - url: "{{baseUrl}}/categories"
     name: List Categories
@@ -133,7 +134,7 @@ collection:
         store: true
       rebuildPath: true
 
-  # Exemplo de categoria pre-definidas
+  # Exemplos de categorias pre-definidas
 
   - url: "{{baseUrl}}/categories"
     name: Create Category [Carnes]
@@ -353,7 +354,7 @@ collection:
         store: true
       rebuildPath: true
 
-# Exemplos de receitas pre-definida
+# Exemplo de receitas pre-definidas
   - url: "{{baseUrl}}/recipes"
     name: Create Recipe [ carne assada ]
     meta:

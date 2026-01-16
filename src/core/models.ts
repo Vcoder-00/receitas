@@ -1,3 +1,7 @@
+/**
+ * CÓDIGO MODIFICADO
+ * Importação do tipo RecipeStatus para representar o estado da receita.
+ */
 import { RecipeStatus } from "./RecipeStatus.js"
 
 export type Category = {
@@ -21,13 +25,19 @@ export type Recipe = {
   servings: number
   categoryId: string
   createdAt: Date
+
   /**
-   * MODIFICAÇÃO: Adição do status da receita
-   * @param status - Estado atual da receita no sistema.
+   * CÓDIGO NOVO
+   * Estado atual da receita (draft, published ou archived).
+   * Necessário para aplicar as regras de negócio do workflow.
    */
   status: RecipeStatus
 }
 
+/**
+ * CÓDIGO ORIGINAL
+ * Estrutura de entrada para criação de receitas.
+ */
 export type CreateRecipeInput = {
   title: string
   description?: string

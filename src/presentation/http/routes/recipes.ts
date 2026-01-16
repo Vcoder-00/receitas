@@ -90,8 +90,39 @@ export function recipesRoutes(service: IRecipeService) {
   })
 
   /**
-  * Endpoint para publicar receita (draft → published)
-  */
+   * CÓDIGO NOVO
+   * Endpoint para escalonamento de porções
+   * Não persiste dados, apenas retorna cálculo proporcional
+   */
+  router.post("/:id/scale", async (req, res, next) => {
+    try {
+      const servings = Number(req.body.servings)
+      const recipe = await service.scaleRecipe(req.params.id, servings)
+      res.json(recipe)
+    } catch (error) {
+      next(error)
+    }
+  })
+
+ /**
+   * CÓDIGO NOVO
+   * Endpoint para geração de lista de compras consolidada
+   *  Ação do contexto de receitas para geração de lista de compras consolidada
+   */
+  router.post("/action/shopping-list", async (req, res, next) => {
+    try {
+      const recipeIds = req.body.recipeIds
+      const result = await service.generateShoppingList(recipeIds)
+      res.json(result)
+    } catch (error) {
+      next(error)
+    }
+  })
+
+  /**
+   * CÓDIGO NOVO
+   * Endpoint para publicar receita (draft → published)
+   */
   router.post("/:id/publish", async (req, res, next) => {
     try {
       const recipe = await service.publish(req.params.id)
@@ -102,25 +133,13 @@ export function recipesRoutes(service: IRecipeService) {
   })
 
   /**
-  * Endpoint para arquivar receita (published → archived)
-  */
+   * CÓDIGO NOVO
+   * Endpoint para arquivar receita (published → archived)
+   */
   router.post("/:id/archive", async (req, res, next) => {
     try {
       const recipe = await service.archive(req.params.id)
       res.json(recipe)
-    } catch (error) {
-      next(error)
-    }
-  })
-
-  /**
-   * Endpoint para geração de lista de compras consolidada
-   */
-  router.post("/action/shopping-list", async (req, res, next) => {
-    try {
-      const recipesIds = req.body.recipesIds
-      const result = await service.generateShoppingList(recipesIds)
-      res.json(result)
     } catch (error) {
       next(error)
     }

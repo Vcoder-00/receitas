@@ -36,17 +36,7 @@ export class CategoryService implements ICategoryService {
   )
 }
 
-/**
- * CÓDIGO MODIFICADO
- * Versão mais segura e robusta da criação de categorias.
- * 
- * - Garante que `data.name` nunca seja null ou undefined, convertendo para string.
- * - Remove espaços em branco antes e depois do nome.
- * - Evita erro de runtime ao chamar `.trim()` em valores inválidos.
- * - Valida duplicidade usando o nome já normalizado.
- *
- */
-  async create(data: { name: string }): Promise<Category> {
+async create(data: { name: string }): Promise<Category> {
   const name = String(data.name ?? "").trim()
 
   if (!name) {
@@ -69,6 +59,7 @@ export class CategoryService implements ICategoryService {
 
   return category
 }
+
   async update(id: string, data: { name?: string }): Promise<Category> {
     const idx = store.categories.findIndex((c) => c.id === id)
     if (idx < 0) throw new Error("Category not found")

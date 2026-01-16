@@ -1,6 +1,6 @@
 /**
- * MODIFICAÇÃO: Estados da Receita (Workflow)
- * @param RecipeStatus - Estados possíveis de uma receita no sistema.
+ * CÓDIGO NOVO
+ * Arquivo criado para representar o estado da receita.
+ * Utilizado para implementar o workflow exigido no trabalho.
  */
-
-export type RecipeStatus = "draft" | "published" | "archived";
+export type RecipeStatus = "draft" | "published" | "archived"
