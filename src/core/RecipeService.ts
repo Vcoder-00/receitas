@@ -280,14 +280,14 @@ export class RecipeService implements IRecipeService {
  * CÓDIGO NOVO
  * Gera lista de compras consolidada
  */
-async generateShoppingList(recipeIds: string[]) {
-  if (!Array.isArray(recipeIds) || recipeIds.length === 0) {
+async generateShoppingList(recipesIds: string[]) {
+  if (!Array.isArray(recipesIds) || recipesIds.length === 0) {
     throw new Error("Recipe IDs are required")
   }
 
   const list: { ingredientId: string; unit: string; quantity: number }[] = []
 
-  for (const id of recipeIds) {
+  for (const id of recipesIds) {
     const recipe = await this.get(id)
 
     for (const ing of recipe.ingredients) {
