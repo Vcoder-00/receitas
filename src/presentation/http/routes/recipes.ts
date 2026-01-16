@@ -118,8 +118,8 @@ export function recipesRoutes(service: IRecipeService) {
    */
   router.post("/action/shopping-list", async (req, res, next) => {
     try {
-      const recipeIds = req.body.recipeIds
-      const result = await service.generateShoppingList(recipeIds)
+      const recipesIds = req.body.recipesIds
+      const result = await service.generateShoppingList(recipesIds)
       res.json(result)
     } catch (error) {
       next(error)
